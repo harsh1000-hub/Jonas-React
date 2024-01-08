@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vanilla JS</title>
+</head>
+<body>
+       <h1 class="advice"></h1>
+       <button class="button">Get Advice</button>
+       <p>You have read <strong class="count"></strong> pieces of advice</p>
+       <script>
+            const adviceEl = document.querySelector(".advice");
+            const buttonEl = document.querySelector(".button");
+            const countEl  = document.querySelector(".count");
+            const getAdvice = async function(){
+                const res = await fetch("https://api.adviceslip.com/advice");
+                const data = await res.json();
+
+                // updating values
+                advice = data.slip.advice;
+                count = count+1;
+
+                // Manually updating the values
+                adviceEl.textContent =  advice;
+                countEl.textContent = count;
+
+            }
+            // setting up intial values;  --> this is working as useState() in react
+            let count = 0;
+            let advice;
+            getAdvice();  // working as useEffect() in react
+
+            // attance an event listener
+            buttonEl.addEventListener('click',getAdvice);
+       </script>
+</body>
+    
+</html>
