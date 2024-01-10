@@ -4,4 +4,7 @@ a. Pure React installation using some scripts that in React documentation with u
 
 2:- Navigate from C drive to D drive using cmd = cd /d d:
 
-3: command for creating the React app = npx creat-react-app@5 project-name~
+3: command for creating the React app = npx creat-react-app@5 project-name
+4: quokka extension use for js/ts to run on vscode rapid for using quokka open command platte and then type quokka start
+5: Learn about destructuring the array of objects and array iteself in  [ Section 4: 18 ]
+6: Learn about rest and spread operator in JS [ Section 4: 18 ]

@@ -142,3 +142,35 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+const book = getBook(1);
+
+// destructuring  = means figure out some data from complex datastructures
+
+// Object destructing = means figure out some property data from large objects of array like above
+const { title, author, genres } = book; // here is one thing keep in mind when you destucture name of property should be same as above
+console.log(title, author, genres);
+
+// as genres iteself an array inside array of obejcts
+// and if you want specific geners and it is simple bcz genres iteself is arrat so you can access by index
+// const primaryGenre = genres[0];
+// const secondGenre = genres[1];
+
+// above array of index code is ugly so here we destruct uring the array
+// [primaryGenre, secondGenre] = genres;
+// console.log(primaryGenre, secondGenre);
+
+// =============================================================================================
+
+// rest operator (...) = rest itself name suggest contains the rest data inside ar array
+// here is the rule of it always come in the end of parametes rankings
+// for ex:- in the above code we have primaryGenre,secondGenre and rest of genres we put in rest array
+
+const [primaryGenre, secondGenre, ...OtherGenres] = genres;
+console.log(primaryGenre, secondGenre, OtherGenres);
+
+// spread operator (...) =  Used to spread the elements of an iterable (array, string, or object) into individual elements or properties.
+// for ex:- if you want to add new properties in book id 1 that is moviePublicationDate
+const updateBook = { ...book, moviePublicationDate: "2001-12-19", pages: 1000 };
+// ... book = it spread object all property into individual elements
+// here adding the new property that is moviePublicationDate and overwrite the exist property that is pages
+updateBook;
