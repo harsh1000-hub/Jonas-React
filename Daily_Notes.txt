@@ -1,0 +1,7 @@
+1:- Section 3 => 13. Pure React
+Notes:- 
+a. Pure React installation using some scripts that in React documentation with using any tools
+
+2:- Navigate from C drive to D drive using cmd = cd /d d:
+
+3: command for creating the React app = npx creat-react-app@5 project-name~
