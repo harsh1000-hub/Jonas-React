@@ -7,4 +7,45 @@ a. Pure React installation using some scripts that in React documentation with u
 3: command for creating the React app = npx creat-react-app@5 project-name
 4: quokka extension use for js/ts to run on vscode rapid for using quokka open command platte and then type quokka start
 5: Learn about destructuring the array of objects and array iteself in  [ Section 4: 18 ]
+
 6: Learn about rest and spread operator in JS [ Section 4: 18 ]
+
+More Details on spread operator:-
+let objNew = [
+  {
+    id:1,
+    title:"Cohort",
+    day:"Monday",
+    gender:[
+      "male",
+      "female",
+      "others"
+    ]
+  },{
+    id:2,
+    title:"Striver",
+    day:"Sunday",
+    color:[
+      "red",
+      "yellow",
+      "green"
+    ]
+  }
+]
+// //console.log(objNew);
+// const updateMyObj = {...objNew,completed:"false",day:"tuesday"};   // means convert your array of objects into a object type
+// console.log(updateMyObj);  // O/P = object
+function getObject(id){
+  return objNew.find((d) => d.id === id)
+}
+const temp = getObject(1);
+const updateTemp = {...temp,title:"Web 3",completed:"false"};
+console.log(updateTemp);
+
+
+// Rule of spread operator 
+// If you want to spread the array then you have to use the square bracket with that [...temp]
+// If you want to spread the objects then you have to use the curly bracket with that {...temp}
+
+
+7. 

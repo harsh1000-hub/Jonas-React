@@ -151,7 +151,7 @@ const { title, author, genres } = book; // here is one thing keep in mind when y
 console.log(title, author, genres);
 
 // as genres iteself an array inside array of obejcts
-// and if you want specific geners and it is simple bcz genres iteself is arrat so you can access by index
+// and if you want specific generes and it is simple bcz genres iteself is array so you can access by index
 // const primaryGenre = genres[0];
 // const secondGenre = genres[1];
 
@@ -162,7 +162,7 @@ console.log(title, author, genres);
 // =============================================================================================
 
 // rest operator (...) = rest itself name suggest contains the rest data inside ar array
-// here is the rule of it always come in the end of parametes rankings
+// here is the rule of it always come in the end of parameters rankings or last in function parameters
 // for ex:- in the above code we have primaryGenre,secondGenre and rest of genres we put in rest array
 
 const [primaryGenre, secondGenre, ...OtherGenres] = genres;
@@ -171,6 +171,6 @@ console.log(primaryGenre, secondGenre, OtherGenres);
 // spread operator (...) =  Used to spread the elements of an iterable (array, string, or object) into individual elements or properties.
 // for ex:- if you want to add new properties in book id 1 that is moviePublicationDate
 const updateBook = { ...book, moviePublicationDate: "2001-12-19", pages: 1000 };
-// ... book = it spread object all property into individual elements
+// ... book = it spread all thing into objects and then we can easily put new property in book
 // here adding the new property that is moviePublicationDate and overwrite the exist property that is pages
 updateBook;
