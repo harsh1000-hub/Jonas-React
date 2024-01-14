@@ -202,3 +202,30 @@ function getTotalReviewCountfor_Book_Id3(book) {
   return goodreads + librarything;
 }
 console.log(getTotalReviewCountfor_Book_Id3(book)); // for book id = 3 O/P will be NaN
+
+// filet,map,reduce => always create a new array then do operation but sort method do create a new array rather than do sort opreation in that original array
+const arr1 = [3, 4, 2, 1, 0, 9];
+const result = arr1.filter((el) => el % 2 === 0);
+console.log(result);
+const resultMap = arr1.map((el) => el + 3).map((el) => el + 1);
+console.log(resultMap);
+const resultReduce = arr1.reduce((acc, el) => acc + el, 0);
+console.log(resultReduce);
+
+// Sort method in array
+const arr = [3, 4, 2, 1, 0, 9];
+arr.sort((a, b) => a - b); // sort in increasing order and we can't even store the sorted array bcz it already do the sort operation on arr rather than created new array like map,filter,reduce
+console.log(arr);
+arr.sort((a, b) => b - a); // sort in decreasing order
+console.log(arr);
+
+// basically reacy do not like mutating data that's why if you want to sort the (brr) array below make a copy of that array and than do the sort operation
+const brr = [6, 1, 3, 9, 8];
+const sortedBrr = brr.slice().sort((x, y) => x - y);
+console.log(sortedBrr); // here no change in brr array
+
+// sort more complex data like array of object
+const sortedOnPages = data
+  .slice()
+  .sort((a, b) => b.reviews.goodreads.rating - a.reviews.goodreads.rating);
+console.log(sortedOnPages);
