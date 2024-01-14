@@ -143,7 +143,8 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 const book = getBook(2);
-
+const books = getBooks();
+console.log(books);
 // destructuring  = means figure out some data from complex datastructures
 
 // Object destructing = means figure out some property data from large objects of array like above
@@ -229,3 +230,25 @@ const sortedOnPages = data
   .slice()
   .sort((a, b) => b.reviews.goodreads.rating - a.reviews.goodreads.rating);
 console.log(sortedOnPages);
+
+// Manipulate the array means adding new thing, update the content and deleting the content
+// create new object
+const newBook = {
+  id: 6,
+  title: "Virat Kohli Biography",
+  author: "Harsh Vardhan",
+};
+// Add new object to the array
+const booksAfterAdd = [...books, newBook];
+console.log(booksAfterAdd); // it will added new objects into a books array of objects
+// add this newBook object into thr data array of objects
+
+// delete some object from the array
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+console.log(booksAfterDelete); // so this array there no book whose id === 3
+
+// update some object in the array
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? { ...book, pages: 5000 } : book
+);
+console.log(booksAfterUpdate);

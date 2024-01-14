@@ -61,4 +61,5 @@ falsy values are:- 0, '',null,undefined [Section 4-23]
 11. Learn about nullish colleshing ? used when we don't know the exist data or not  [Section 4-24]
 12. Learn about map,filter,reduce -> Section[4-25,26,27]
 13. Learn about sort method in array -> Section[4-28]
+14. Learn about update,add,delete from array of objects -> [Section 4-29]
 
