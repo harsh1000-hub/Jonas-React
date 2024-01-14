@@ -48,4 +48,15 @@ console.log(updateTemp);
 // If you want to spread the objects then you have to use the curly bracket with that {...temp}
 
 
-7. 
+7. Learn about template literals in JS that is `{title}, a book and consists of {pages}-pages` [Section-4 20]
+8. Learn about ternary operator in JS:- [Section 4-21]
+const pages = 1000;
+const result = pages>1000 ? "pages is more than 1000" : "pages is less than or equal to 1000"
+console.log(result);   
+9. Learn about arrow function in JS that is used when you function have one line of statement: {Section 4-22}
+
+10. Learn about && and || operator and also a special operator that is nullish colleshing operator that also short circuit the falsy values.
+falsy values are:- 0, '',null,undefined [Section 4-23]
+
+11. Learn about nullish colleshing ? used when we don't know the exist data or not 
+

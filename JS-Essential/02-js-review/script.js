@@ -142,7 +142,7 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
-const book = getBook(1);
+const book = getBook(2);
 
 // destructuring  = means figure out some data from complex datastructures
 
@@ -174,3 +174,31 @@ const updateBook = { ...book, moviePublicationDate: "2001-12-19", pages: 1000 };
 // ... book = it spread all thing into objects and then we can easily put new property in book
 // here adding the new property that is moviePublicationDate and overwrite the exist property that is pages
 updateBook;
+
+// Arrow function in JS = it is used for one line function
+const getYear = (str) => str.split("-")[0];
+console.log(getYear(book.publicationDate));
+
+// nullish colleshing
+const countOfreview = book.reviews.librarything.reviewsCount || "no data";
+countOfreview; // o/p = no data as you can see that falsy value with OR operator first check book.reviews that is 0 means a falsy that it print the no data so this is the disadvantage of OR operator bcz it doesn't short circuit the falsy values so for that nullish colleshing operator comes ??
+
+const newCountOfReviews = book.reviews.librarything.reviewsCount ?? "no data";
+console.log(newCountOfReviews); // now it give 0
+
+// optional chaining = used when we don't know that upcoming data exist or not in checking condition
+// In case where book have id = 2 they have goodreads and librarything both properties
+function getTotalReviewCountfor_Book_Id2(book) {
+  const goodreads = book.reviews.goodreads.reviewsCount;
+  const librarything = book.reviews.librarything.reviewsCount;
+  return goodreads + librarything;
+}
+console.log(getTotalReviewCountfor_Book_Id2(book));
+
+// In case where book id = 3 they have goodreads only not librarything in there properties
+function getTotalReviewCountfor_Book_Id3(book) {
+  const goodreads = book.reviews.goodreads.reviewsCount;
+  const librarything = book.reviews.librarything?.reviewsCount ?? 0; // ? == nullish colleshing
+  return goodreads + librarything;
+}
+console.log(getTotalReviewCountfor_Book_Id3(book)); // for book id = 3 O/P will be NaN
