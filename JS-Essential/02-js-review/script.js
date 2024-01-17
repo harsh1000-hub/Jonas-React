@@ -220,7 +220,7 @@ console.log(arr);
 arr.sort((a, b) => b - a); // sort in decreasing order
 console.log(arr);
 
-// basically reacy do not like mutating data that's why if you want to sort the (brr) array below make a copy of that array and than do the sort operation
+// basically react do not like mutating data that's why if you want to sort the (brr) array below make a copy of that array and than do the sort operation
 const brr = [6, 1, 3, 9, 8];
 const sortedBrr = brr.slice().sort((x, y) => x - y);
 console.log(sortedBrr); // here no change in brr array
@@ -241,14 +241,30 @@ const newBook = {
 // Add new object to the array
 const booksAfterAdd = [...books, newBook];
 console.log(booksAfterAdd); // it will added new objects into a books array of objects
-// add this newBook object into thr data array of objects
+// add this newBook object into the data array of objects
 
 // delete some object from the array
 const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
-console.log(booksAfterDelete); // so this array there no book whose id === 3
+console.log(booksAfterDelete); // so int this array there is no book whose id === 3
 
 // update some object in the array
 const booksAfterUpdate = booksAfterDelete.map((book) =>
   book.id === 1 ? { ...book, pages: 5000 } : book
 );
 console.log(booksAfterUpdate);
+
+// async nature in JS
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+console.log("harsh");
+// in above code harsh execute first and then fetch execute bcz due to async call
+
+// apply async and await in the above code
+async function getTodos() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+  console.log(data);
+}
+getTodos();
+console.log("Hey");

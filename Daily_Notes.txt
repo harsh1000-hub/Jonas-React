@@ -62,4 +62,11 @@ falsy values are:- 0, '',null,undefined [Section 4-23]
 12. Learn about map,filter,reduce -> Section[4-25,26,27]
 13. Learn about sort method in array -> Section[4-28]
 14. Learn about update,add,delete from array of objects -> [Section 4-29]
+15. Learn about promises in JS -> [Section 4-30]
+16. Learn about async/await in JS -> [Section 4-31]
 
+
+====================================================================================
+SECTION 5:-
+1. Section[5-32] is all abour overview in this Section.
+2. Section[5-33] ->
