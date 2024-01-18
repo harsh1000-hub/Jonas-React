@@ -4,7 +4,7 @@ a. Pure React installation using some scripts that in React documentation with u
 
 2:- Navigate from C drive to D drive using cmd = cd /d d:
 
-3: command for creating the React app = npx creat-react-app@5 project-name
+3: command for creating the React app = npx create-react-app@5 project-name
 4: quokka extension use for js/ts to run on vscode rapid for using quokka open command platte and then type quokka start
 5: Learn about destructuring the array of objects and array iteself in  [ Section 4: 18 ]
 
@@ -69,4 +69,50 @@ falsy values are:- 0, '',null,undefined [Section 4-23]
 ====================================================================================
 SECTION 5:-
 1. Section[5-32] is all abour overview in this Section.
-2. Section[5-33] ->
+
+* Section[5-33] :-
+1. Entry point in the react project is index.js
+
+* Section[5-34]:-
+1. How to stop the application of react shortcut by using ctrl + c and start again by using npm start
+2. Google the error for react rather than watch youtube video
+
+* Section[5-35]:-
+1. theory of components
+
+* Section[5-36]:-
+1. How to select multiple folder/file in vs code by holding the ctrl and right click on specific folder and chose one by one option copy
+2. In react components name start will capital letter and also return some markup means jsx
+3. Always one component return one markup you can wrap up other markup inside parent markup
+4. Never nest other component inside another component bcz it is bad practice it work but don't do that.
+
+5. All the assests folder like images, video and etc should be in public folder bcz web pack means react bundle automatincally find that easily
+6. Reusing the component by just write the component in root component
+
+*Section[5-37]:-
+1. What is JSX in react -> JSX is a decalarative syntax means in react we only focus on how UI should look like thorugh JSX and all dom task done by react iteself.
+
+*Section[5-38]:-
+1. Build multiple components for pizza project
+2. Combining smaller component into bigger components for building complex UI
+
+*Section[5-39]:-
+1. Write some JS code inside the function component not inside the JSX 
+
+*Section[5-40]:-
+1. component is all about three things that are logic,appereance and Data that's why react is all about components.
+
+*Section[5-41]:-
+1.How to use CSS inside JSX using double curly braces
+2. How to use global styles inside JSX and means as we import styles from index.css they all are global styles use anywhere in the components.
+
+*Section[5-42]:-
+1. How to use props here props means pass data from parent component to child component .
+2. Two steps are there in props to use:
+   a. First pass to the component.
+   b. Receice the props to the child component.
+   c. Here props are object so when u use in child component always used in Javascript mode means inside curly braces {props.name} like that.
+
+*Section[5-43]:-
+1. Diff b/w props and state are props are upcoming data from parent component to child component and state are local data of a particular component
+2. So from above line it means that props are immutable by child component instead you have to mutate the props so update the props thru state.
