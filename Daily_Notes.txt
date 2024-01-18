@@ -116,3 +116,4 @@ SECTION 5:-
 *Section[5-43]:-
 1. Diff b/w props and state are props are upcoming data from parent component to child component and state are local data of a particular component
 2. So from above line it means that props are immutable by child component instead you have to mutate the props so update the props thru state.
+3. React follow one-way data flow means only from parent component to child component props pass not vice-versa.
