@@ -117,3 +117,13 @@ SECTION 5:-
 1. Diff b/w props and state are props are upcoming data from parent component to child component and state are local data of a particular component
 2. So from above line it means that props are immutable by child component instead you have to mutate the props so update the props thru state.
 3. React follow one-way data flow means only from parent component to child component props pass not vice-versa.
+
+*Section[5-44]:-
+1. Make a Profile Card project
+
+*Section[5-45]:-
+1. Learn abour rule in JSX for better understanding go thru the slides
+
+*Section[5-46]:-
+1. Rendering the list from pizzaData array to the menu component using map.
+2. Here I learn about how to pass component inside map function 
