@@ -138,4 +138,17 @@ SECTION 5:-
 1. Learn about how to do conditional Rendering with multiple returns statement.
 
 *Section[5-50]:-
+1. Extracting JSx into a component
+
+*Section[5-51]:-
+1. destructuring thw props means not write like this props.something rather in child component destructure the props like {pizzaObj} use that and keep in mind that name should be same as what tha props you pass in parent component.
+2. From destructuring props is give us advantage means we clearly see that what props pass from parent component to child component.
+
+*Section[5-52]:-
+1. Learn about react fragment -> use when we need to render more than one element inside jsx bcz as per jsx rule it only have one parent element.
+
+*Section[5-53]:-
+1. conditional set the text content of any element and set the className according to some condition.
+
+*Section[5-54]:-
 1. 
