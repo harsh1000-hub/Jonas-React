@@ -151,4 +151,9 @@ SECTION 5:-
 1. conditional set the text content of any element and set the className according to some condition.
 
 *Section[5-54]:-
-1. 
+1. revise the topics
+
+*Section[5-45]:-
+1. challenge for Profile Card => thru this challenge I actually code about how to render a list using map inside jsx and how to render inner text of element with some conditional Rendering.
+2. Also learn about how to write three condition in ternary operator like:-
+   Ex:-  {skillObj.level === "advanced" ? (<span>💪</span>) : skillObj.level === "intermediate" ? ( <span>👍</span>) : (  <span>😯</span>)}
