@@ -122,8 +122,20 @@ SECTION 5:-
 1. Make a Profile Card project
 
 *Section[5-45]:-
-1. Learn abour rule in JSX for better understanding go thru the slides
+1. Learn abour rule in JSX for better understanding go thru the slides and inside jsx we only have to write the JS part which produces a value not like using if-else or something else that do not produce any value.
 
 *Section[5-46]:-
 1. Rendering the list from pizzaData array to the menu component using map.
-2. Here I learn about how to pass component inside map function 
+2. Here I learn about how to pass component inside map function.
+
+*Section[5-47]:-
+1. Learn about how to do conditional Rendering with && inside component to render UI according to the condition
+
+*Section[5-48]:-
+1. Learn about how to do conditional Rendering with ternary operator inside component to render UI according to the condition
+
+*Section[5-49]:-
+1. Learn about how to do conditional Rendering with multiple returns statement.
+
+*Section[5-50]:-
+1. 
