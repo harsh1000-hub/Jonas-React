@@ -153,7 +153,35 @@ SECTION 5:-
 *Section[5-54]:-
 1. revise the topics
 
-*Section[5-45]:-
+*Section[5-55]:-
 1. challenge for Profile Card => thru this challenge I actually code about how to render a list using map inside jsx and how to render inner text of element with some conditional Rendering.
 2. Also learn about how to write three condition in ternary operator like:-
    Ex:-  {skillObj.level === "advanced" ? (<span>💪</span>) : skillObj.level === "intermediate" ? ( <span>👍</span>) : (  <span>😯</span>)}
+
+========================================================================================
+
+*Section[6-56]:-
+1.Section overview
+
+*Section[6-57]:-
+1. Make a step project component.
+
+*Section[6-58]:-
+1. How to handle click event in react
+2. Note that don't ever calling a function inside eventHandle bcz react directly execute that function.
+3. Always when you handle event in react make separate eventHandler function like handlePrevious and handleNext
+
+*Section[6-59]:-
+1. learn about what is state.
+
+*Section[6-60]:-
+1. Three steps to use useState:-
+   a. First create state variable.
+   b. use in jsx.
+   c. update the state variable major time in eventHandler.
+
+2. Any state start with use keyword are known as hooks in react
+3. Always place useState in starting point of functional component.
+
+*Section[6-61]:-
+1. 
