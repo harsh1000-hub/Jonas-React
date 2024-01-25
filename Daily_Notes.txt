@@ -184,4 +184,13 @@ SECTION 5:-
 3. Always place useState in starting point of functional component.
 
 *Section[6-61]:-
+1. State in react are immutable means not directly change the state varibale rather thn used tools that react given like setter function thru you can change the state varibale. like:- const [step,setStep] = useState(1);  // here we use const due to react are immutable means we can not directly change the step rather thru setter function we change step value.
+
+*Section[6-62]:-
+1. Learn about mechanism of state.
+
+*Section[6-63]:-
+1. Build steps component and make another state.
+
+*Section[6-64]:-
 1. 
