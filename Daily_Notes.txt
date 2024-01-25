@@ -193,4 +193,25 @@ SECTION 5:-
 1. Build steps component and make another state.
 
 *Section[6-64]:-
-1. 
+1. learn about how to use react dev tools means how to change the value of state to check how UI will look like.
+
+*Section[6-65]:-
+1. Don't update state based on your current state bcz for let in future if you want that state update twice so if simply update the state like that:-   setStep(step+1) ;
+         setStep(step+1) ; 
+         // In above code state only update one time bcz due to sync nature of JS
+
+2. So rather than update the state with callback function so that other task will also execute like that:-
+   setStep((step) => step+1);
+    setStep((step) => step+1);
+    // in above case step update twice in single moment. AND this is the best practice to update the state using callback function.
+
+*Section[6-66]:-
+1. UI is all about function of state means whatever the state similar the UI.
+2. use state where you find that particular component change over time.
+3. Learn guidelines related to state.
+
+*Section[6-67]:-
+1. Learn that every component if it is same component used in parent component two times there state are individual for both child component.
+Ex:- if we use Step card component two times and any changes in first step card component does not do any effect on second step child component.
+2. Every component have there own independent state it does not matter that component are same 
+   

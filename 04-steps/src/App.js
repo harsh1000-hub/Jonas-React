@@ -15,17 +15,22 @@ export default function App() {
 
   // handlePrevious function
   function handlePrevious() {
-    if (step > 1) setStep(step - 1); // Step 2:- updating the state variable
+    // if (step > 1) setStep(step - 1); // Step 2:- updating the state variable
+    // update state variable using callback functionality
+    if (step > 1) setStep((s) => s - 1);
   }
 
   // handleNext function
   function handleNext() {
-    if (step < 3) setStep(step + 1); // Step 2:- updating the state variable
+    // if (step < 3) setStep(step + 1); // Step 2:- updating the state variable
+    if (step < 3) setStep((s) => s + 1);
   }
 
   // handleClose function
   function handleClose() {
-    isOpen === true ? setIsOpen(false) : setIsOpen(true);
+    isOpen === true
+      ? setIsOpen((item) => (item = false))
+      : setIsOpen((item) => (item = true));
   }
 
   return (
