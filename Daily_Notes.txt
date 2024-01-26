@@ -213,5 +213,42 @@ SECTION 5:-
 *Section[6-67]:-
 1. Learn that every component if it is same component used in parent component two times there state are individual for both child component.
 Ex:- if we use Step card component two times and any changes in first step card component does not do any effect on second step child component.
-2. Every component have there own independent state it does not matter that component are same 
-   
+2. Every component have there own independent state it does not matter that component are same.
+
+*Section[6-68]:-
+1. Do challenge give by Jonas -> challenge completed by me.
+
+*Section[6-69]:-
+1. Start building amazing projects:- Summary about project.
+
+*Section[6-70]:-
+1. Build layout or UI of the project.
+
+*Section[6-71]:-
+1. Rendering the item list by using map concept.
+
+*Section[6-72]:-
+1. Learn new thing that always pass key in component rather than in any jsx and in any html tag.
+
+
+2. When any event occur it pass the event object that is 'e' we used that 'e' to target anything in that event like:-
+   onSubmit={handleSubmit}  -> another way write this line onSubmit = {{e} => handleSubmit(e)}
+   function handleSubmit(e){
+    e.target.value // like this 
+   }
+
+
+3. In html wheneven any form submit means event occur page reload but in react we want to build single page application without reload so how to this by stoping the default behaviour of html 😃:-
+   function handleSubmit(e){
+    e.preventDefault() // this will stop the page reload behaviour of html. 
+   }
+
+4. Diff b/w onSubmit -> use in form tag in html means if enter in form OR click on button of submit -> both work same for submitting the form content. While onClick -> only work for button tag means no enter tap feature in there in onClick tag.
+
+*Section[6-73]:-
+1. Learn about how to controlled the element thru react it have three steps:- 1. define the state 2. use the state variable 3. update the state variable thru event function like onChange.
+2. e.target.value = by default a string.
+3. Date only flow down the tree means from parent command to child component here data means props not in siblings.
+
+*Section[6-74]:-
+1. Diff b/w state and props:- Look in slides.
