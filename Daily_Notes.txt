@@ -252,3 +252,20 @@ Ex:- if we use Step card component two times and any changes in first step card 
 
 *Section[6-74]:-
 1. Diff b/w state and props:- Look in slides.
+
+*Section[6-75]:-
+1. challenge solve flashcards
+
+*Section[6-76]:-
+1. challenge solve v2-counter
+
+==============================================================😀😀😀========================================================================
+
+*Section[7-77]:-
+1. overview of this Section.
+
+*Section[7-78]:-
+1. How to think in react.
+ 
+*Section[7-79]:-
+1. Fundamentals of state management when and where to use state.
