@@ -286,4 +286,14 @@ Ex:- if we use Step card component two times and any changes in first step card 
 
 
 *Section[7-84]:-
-1. 
+1. Derived state do some UI part of travel list
+
+*Section[7-85]:-
+1. Derived state implementation in travel list.
+
+*Section[7-86]:-
+1. Like if sort the original in the new array iteself in that case original array is also sorted due to sort function mutate the original array as well as the new array so keep in mind first slice the original array then apply sort method on new array so that it can't effect the original array.
+
+*Section[7-87]:-
+1. Sort the new array on the basis of sortBy in travel list project.
+2. implement clear the list in travel list by me and learn about window.confirm() means confirm from the user before delete all items.
