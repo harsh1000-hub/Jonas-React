@@ -269,3 +269,21 @@ Ex:- if we use Step card component two times and any changes in first step card 
  
 *Section[7-79]:-
 1. Fundamentals of state management when and where to use state.
+
+*Section[7-80]:-
+1. Learn new concept lifting up the state means whenever we need same state in more than one child component so we uplift the state means declare that to the closest parent componen bcz in react data flow from parent to child component not vice - versa.
+2. So whenever we need same state in more than one child component declare that state in parent component should we should follow react principles.
+
+*Section[7-81]:-
+1. More details explanation about lifting up the state.
+
+*Section[7-82]:-
+1. delete item from the list.
+
+*Section[7-83]:-
+1. Learn about derive state means when you figure out that another state easily calculate and you need that stuff so rather than creating a new state try to derive the state bcz it will decrease a number of re-render happen.
+2. Or you can say that when you calculate the computed value from other state and use that value in your project so never create another state to increase the re-render operation. like i am doing in travel list project for footer section i again create a new state.
+
+
+*Section[7-84]:-
+1. 

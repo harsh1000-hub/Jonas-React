@@ -1,18 +1,40 @@
 import { useState } from "react";
 
-const initialItems = [
-  { id: 1, description: "Passports", quantity: 2, packed: false },
-  { id: 2, description: "Socks", quantity: 12, packed: true },
-  { id: 3, description: "Charger", quantity: 1, packed: true },
-];
-
 export default function App() {
+  // create a items state that's use in packagelist and form component both so we uplift the state
+  const [items, setItems] = useState([]); // declare with empty array bcz list is in array form.
+
+  // handleAddItems function
+  function handleAddItems(newItem) {
+    //console.log(items);
+    setItems((items) => [...items, newItem]);
+  }
+
+  // handleDeleteItems
+  function handleDeleteItem(id) {
+    setItems((items) => items.filter((itemObj) => itemObj.id !== id));
+  }
+
+  // handleToggleItem function
+  function handleToggleItem(id) {
+    setItems((items) =>
+      items.map((itemObj) =>
+        itemObj.id === id ? { ...itemObj, packed: !itemObj.packed } : itemObj
+      )
+    );
+  }
+
   return (
     <div className="container">
       <Logo />
-      <Form />
-      <PackingList />
-      <Stats />
+      {/* below we pass props in function manner also like in Form component */}
+      <Form OnAddItems={handleAddItems} />
+      <PackingList
+        items={items}
+        OnDeleteItem={handleDeleteItem}
+        onToggleItem={handleToggleItem}
+      />
+      <Stats items={items} />
     </div>
   );
 }
@@ -22,7 +44,8 @@ function Logo() {
   return <h1> 🏝️ Far Away 🧳</h1>;
 }
 
-function Form() {
+// Form component
+function Form({ OnAddItems }) {
   // description state
   const [description, setDescription] = useState("");
 
@@ -40,6 +63,9 @@ function Form() {
     }
     const newItem = { description, quantity, packed: false, id: Math.random() };
     console.log(newItem);
+
+    // use the passed props function from parent component
+    OnAddItems(newItem);
 
     // setDescription and setQuantity to its original state after form submit
     setDescription((item) => (item = ""));
@@ -72,36 +98,70 @@ function Form() {
 }
 
 // PackageList Component
-function PackingList() {
+function PackingList({ items, OnDeleteItem, onToggleItem }) {
+  // recieve array props from parent component thas is itemArray to replicate in UI part
   return (
     <div className="list">
       <ul>
-        {initialItems.map((item) => (
-          <Item item={item} key={item.id} />
-        ))}
+        {items.map(
+          (
+            item // here use that props that is itemArray
+          ) => (
+            <Item
+              item={item}
+              key={item.id}
+              OnDeleteItem={OnDeleteItem}
+              onToggleItem={onToggleItem}
+            />
+          )
+        )}
       </ul>
     </div>
   );
 }
 
 // item component
-function Item({ item }) {
+function Item({ item, OnDeleteItem, onToggleItem }) {
   return (
     <li>
+      <input
+        type="checkbox"
+        value={item.id}
+        onChange={() => onToggleItem(item.id)}
+      />
       <span style={item.packed ? { textDecoration: "line-through" } : {}}>
         {/* above line strike the content when iten is packed==true */}
         {item.quantity} {item.description}
       </span>
-      <button>❌</button>
+      <button onClick={() => OnDeleteItem(item.id)}>❌</button>
     </li>
   );
 }
 
 // Stats Components
-function Stats() {
+function Stats({ items }) {
+  // initial conditional redering
+  if (!items.length) {
+    return (
+      <p className="stats">
+        <em>Start adding some items to your package list 🚀</em>
+      </p>
+    );
+  }
+
+  // here we derived state
+  const numsItems = items.length;
+  const packedItems = items.filter((item) => item.packed).length;
+  const percentage = Math.round((packedItems / numsItems) * 100);
+
   return (
     <footer className="stats">
-      <em>🧳 You have x items on you list, and you already packed X (X%)</em>
+      <em>
+        {percentage === 100
+          ? "You got everything! Ready to go ✈️"
+          : ` 🧳 You have ${numsItems} items on you list, and you already packed
+        ${packedItems} (${percentage}%)`}
+      </em>
     </footer>
   );
 }
