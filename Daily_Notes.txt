@@ -297,3 +297,9 @@ Ex:- if we use Step card component two times and any changes in first step card 
 *Section[7-87]:-
 1. Sort the new array on the basis of sortBy in travel list project.
 2. implement clear the list in travel list by me and learn about window.confirm() means confirm from the user before delete all items.
+
+*Section[7-89]:-
+1. Learn about how to import other component into another component.
+Two things in export and import are:-
+a. When you give export default someComponentName -> So can import in another component like this import someComoonentName from './someComponentName.js'
+b. When you do not give default to someComponentName -> So you can import like import {someComponentName} from './someComponentName.js' 
