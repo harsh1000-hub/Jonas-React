@@ -314,3 +314,6 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 
 *Section[7-91]:-
 1. Again use the concept of children props to create StepMessage component in steps project.
+
+*Section[7-92]:-
+1. 
