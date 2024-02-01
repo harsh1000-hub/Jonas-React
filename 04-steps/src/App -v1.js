@@ -7,15 +7,6 @@ const messages = [
 ];
 
 export default function App() {
-  return (
-    <div>
-      <Steps />
-    </div>
-  );
-}
-
-// Steps component
-function Steps() {
   // step 1:- create state variable
   const [step, setStep] = useState(1);
 
@@ -56,52 +47,27 @@ function Steps() {
             <div className={step >= 3 ? "active" : ""}>3</div>
           </div>
 
-          <StepMessage step={step}>{messages[step - 1]}</StepMessage>
+          <p className="message">
+            Step {step}: {messages[step - 1]}
+          </p>
 
           <div className="buttons">
-            {/* Here in Button component we uses the concept of children props to give emoji to specific Button */}
-            <Button
-              bgColor="#7950f2"
-              textColor="#fff"
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
               onClick={handlePrevious}
-              text="Previous"
             >
-              <span>👈 Previous</span> {/* here we use children props */}
-            </Button>
-            <Button
-              bgColor="#7950f2"
-              textColor="#fff"
+              Previous
+            </button>
+
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
               onClick={handleNext}
-              text="Next"
             >
-              <span>Next 👉</span>
-            </Button>
+              Next
+            </button>
           </div>
         </div>
       )}
     </>
-  );
-}
-// StepMessage component
-function StepMessage({ step, children }) {
-  return (
-    <div className="message">
-      <h3>Step {step}:</h3>
-      {children}
-    </div>
-  );
-}
-
-// Button Component
-function Button({ bgColor, textColor, onClick, text, children }) {
-  // pass children props that is {children}
-  return (
-    <button
-      style={{ backgroundColor: bgColor, color: textColor }}
-      onClick={onClick}
-    >
-      {children}{" "}
-      {/* here you children props with predefined word of react that is {children} */}
-    </button>
   );
 }

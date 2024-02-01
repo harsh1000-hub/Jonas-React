@@ -302,4 +302,15 @@ Ex:- if we use Step card component two times and any changes in first step card 
 1. Learn about how to import other component into another component.
 Two things in export and import are:-
 a. When you give export default someComponentName -> So can import in another component like this import someComoonentName from './someComponentName.js'
-b. When you do not give default to someComponentName -> So you can import like import {someComponentName} from './someComponentName.js' 
+b. When you do not give default to someComponentName -> So you can import like import {someComponentName} from './someComponentName.js'.
+
+*Section[7-90]:-
+1. Learn about osm topic that is children props => basically children props arw those props that is between the component jsx like:-
+For Ex:- <Button><span>Previous 👈</span></Button> 
+// in this line children props are <span>Previous 👈</span> you can pass to child component with predefined name that is 'children' you can use this children inside you jsx .
+
+2. And from children props you don't have passed unnessary props to child component.
+3. For ussing the children props between your component use have to use this type of syntax <Button>....children props</Button>
+
+*Section[7-91]:-
+1. Again use the concept of children props to create StepMessage component in steps project.
