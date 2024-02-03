@@ -316,4 +316,23 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 1. Again use the concept of children props to create StepMessage component in steps project.
 
 *Section[7-92]:-
+1. Accordion component code with new concept.
+
+*Section[7-93]:-
+1. Tip calculator challenge completed by me.
+
+*Section[7-94]:-
+1. Start with new Project using Previous concept.
+
+*Section[7-95]:-
+1. Project Setup
+
+*Section[7-96]:-
+1. Build a static page for eat-n-split project.
+
+*Section[7-97]:-
+1. Style the eat-n-split project build components.
+2. Learn onew new attribute that is 'disabled' attribute in input box that basically disable the input box typing means we don't intract with that input tag.
+
+*Section[7-98]:-
 1. 
