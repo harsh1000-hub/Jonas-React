@@ -335,4 +335,7 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 2. Learn onew new attribute that is 'disabled' attribute in input box that basically disable the input box typing means we don't intract with that input tag.
 
 *Section[7-98]:-
-1. 
+1. Code some more components in eat-n-split project.
+
+*Section[7-99]:-
+1. Wire up the state and code useing useState.

@@ -24,16 +24,28 @@ function App() {
   // create a state for Show FormAddFriend
   const [showAddFriend, setShowAddFriend] = useState(false);
 
+  // create a common state that is used in FriendsList and FormAddFriend component
+  const [friends, setFriends] = useState(initialFriends);
+
   // update the state for setShowAddFriend
   function handleSetShowAddFriend() {
     setShowAddFriend((item) => !item);
   }
 
+  // handleSetFriends function
+  function handleAddFriend(friend) {
+    setFriends((friends) => [...friends, friend]);
+    // after the submitting the form then change the state of showAddFriend to false so that form will hide
+    setShowAddFriend(false);
+  }
+
   return (
     <div className="app">
       <div className="sidebar">
-        <FriendsList />
-        {showAddFriend === true && <FormAddFriend />}
+        <FriendsList friends={friends} />
+        {showAddFriend === true && (
+          <FormAddFriend onAddFriend={handleAddFriend} />
+        )}
         <Button onClick={handleSetShowAddFriend}>
           {/* below conditional rendering if showAddFriend is false then show AddFriend and otherwise show Close*/}
           {showAddFriend === false ? "Add Friend" : "Close"}
@@ -54,8 +66,7 @@ function Button({ children, onClick }) {
 }
 
 // FriendList Component
-function FriendsList() {
-  const friends = initialFriends;
+function FriendsList({ friends }) {
   return (
     <ul>
       {friends.map((friend) => (
@@ -88,13 +99,51 @@ function Friend({ friend }) {
 }
 
 // FormAdd Friend Component
-function FormAddFriend() {
+function FormAddFriend({ onAddFriend }) {
+  // create a state for name and image
+  const [name, setName] = useState("");
+  const [image, setImage] = useState("https://i.pravatar.cc/48");
+
+  // function handleSubmit when form submit
+  function handleSubmit(e) {
+    e.preventDefault(); // prevent the page reload situation when form submit
+
+    // handle edge case if user not fill any of one field then not submitting the form
+    if (!name || !image) return;
+
+    // using a random id generate function
+    const id = crypto.randomUUID();
+
+    // create newFriend object
+    const newFriend = {
+      id,
+      name,
+      image: `${image}?=${id}`,
+      balance: 0,
+    };
+
+    // here we update the state of setFriends
+    onAddFriend(newFriend);
+
+    // reset the state setName and setImage after submitting the form
+    setName("");
+    setImage("https://i.pravatar.cc/48");
+  }
+
   return (
-    <form className="form-add-friend">
+    <form className="form-add-friend" onSubmit={handleSubmit}>
       <label>👬🏻 Friend name </label>
-      <input type="text" />
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
       <label>🖼️ Image URL</label>
-      <input type="text" />
+      <input
+        type="text"
+        value={image}
+        onChange={(e) => setImage(e.target.value)}
+      />
       <Button>Add</Button>
     </form>
   );
