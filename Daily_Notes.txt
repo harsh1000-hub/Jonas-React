@@ -339,3 +339,12 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 
 *Section[7-99]:-
 1. Wire up the state and code useing useState.
+
+*Section[7-100]:-
+1. Wire the up the state and make some new state for show the friend that selected in friendlist component and show in splitbill component.
+
+*Section[7-101]:-
+1. Creating controlled element.
+
+*Section[7-102]:-
+1. Apply split operation.
