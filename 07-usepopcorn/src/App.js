@@ -51,33 +51,44 @@ const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
 export default function App() {
+  // lift up the state there
+  const [movies, setMovies] = useState(tempMovieData);
+  const [watched, setWatched] = useState(tempWatchedData);
   return (
     <>
-      <Navbar />
-      <Main />
+      {/* here we do component composition */}
+      <Navbar>
+        <Result movies={movies} />
+      </Navbar>
+      <Main>
+        {/* here we do component composition in explicit way means use element/children */}
+        {/* <Box element={<MovieList movies={movies} />} /> */}
+
+        {/* here below is the implicit way*/}
+        <Box>
+          <MovieList movies={movies} />
+        </Box>
+        <Box>
+          <WatchedSummary watched={watched} />
+          <WatchMoviesList watched={watched} />
+        </Box>
+      </Main>
     </>
   );
 }
 
 // Navbar component
-function Navbar() {
+function Navbar({ children }) {
+  // here we use component composition
   return (
     <nav className="nav-bar">
       <Logo />
       <SearchMovie />
-      <Result />
+      {children}
     </nav>
   );
 }
-// Main component
-function Main() {
-  return (
-    <main className="main">
-      <ListBox />
-      <WatchedBox />
-    </main>
-  );
-}
+
 // Logo Component
 function Logo() {
   return (
@@ -103,33 +114,34 @@ function SearchMovie() {
 }
 
 // Result Component
-function Result() {
+function Result({ movies }) {
   return (
     <p className="num-results">
-      Found <strong>X</strong> results
+      Found <strong>{movies.length}</strong> results
     </p>
   );
 }
 
+// Main component
+function Main({ children }) {
+  return <main className="main">{children}</main>;
+}
+
 // ListBox Component
-function ListBox() {
-  const [isOpen1, setIsOpen1] = useState(true);
+function Box({ children }) {
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <div className="box">
-      <button
-        className="btn-toggle"
-        onClick={() => setIsOpen1((open) => !open)}
-      >
-        {isOpen1 ? "–" : "+"}
+      <button className="btn-toggle" onClick={() => setIsOpen((open) => !open)}>
+        {isOpen ? "–" : "+"}
       </button>
-      {isOpen1 && <MovieList />}
+      {isOpen && children}
     </div>
   );
 }
 
 // MovieList Component
-function MovieList() {
-  const [movies, setMovies] = useState(tempMovieData);
+function MovieList({ movies }) {
   return (
     <ul className="list">
       {movies?.map((movie) => (
@@ -155,28 +167,28 @@ function Movie({ movie }) {
   );
 }
 // WatchedBox Component
-function WatchedBox() {
-  const [watched, setWatched] = useState(tempWatchedData);
+// function WatchedBox() {
+//   const [watched, setWatched] = useState(tempWatchedData);
 
-  const [isOpen2, setIsOpen2] = useState(true);
+//   const [isOpen2, setIsOpen2] = useState(true);
 
-  return (
-    <div className="box">
-      <button
-        className="btn-toggle"
-        onClick={() => setIsOpen2((open) => !open)}
-      >
-        {isOpen2 ? "–" : "+"}
-      </button>
-      {isOpen2 && (
-        <>
-          <WatchedSummary watched={watched} />
-          <WatchMoviesList watched={watched} />
-        </>
-      )}
-    </div>
-  );
-}
+//   return (
+//     <div className="box">
+//       <button
+//         className="btn-toggle"
+//         onClick={() => setIsOpen2((open) => !open)}
+//       >
+//         {isOpen2 ? "–" : "+"}
+//       </button>
+//       {isOpen2 && (
+//         <>
+//           <WatchedSummary watched={watched} />
+//           <WatchMoviesList watched={watched} />
+//         </>
+//       )}
+//     </div>
+//   );
+// }
 
 // WatchedSummary component
 function WatchedSummary({ watched }) {

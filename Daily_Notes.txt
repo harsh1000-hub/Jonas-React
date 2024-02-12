@@ -372,3 +372,61 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 
 *Section[10-108]:-
 1. Divide the component according to react best practice.
+
+*Section[10-109]:-
+1. Learn about three types of components :-
+   a. Stateless component.
+   b. Statefull component.
+   c. Structural component.
+
+*Section[10-110]:-
+1. Learn about prop drilling why we don't focus on prop drilling.
+2. And lift up state movies state so that we can do props drilling.
+
+*Section[10-111]:-
+1. component composition -> means as we pass {children} between component so that component will be resuable and flexible.
+2. Similarly component composition -> pass {children} where we can replace {children} with another component like:-
+   Here below in Model component
+   <Model>
+     {children}
+   </Model>
+
+   When we use that Model component in parent app component like that:-
+  <Model>
+    <Error/>
+  </Model>
+3. We need components composition so that our components will be flexible and resuable and build layout that is flexible and remove props drilling issue.
+
+*Section[10-112]:-
+1. Fix out props drilling issue with component composition.
+
+*Section[10-113]:-
+1. There is ListBox component in usepopcorn project we rename that component into Box component and make a resuable component.
+2. And delete that WatchedBox component bcz similar stuff also inside a Box component.
+
+*Section[10-114]:-
+1. Here we pass {children} in two ways first {children} which is called implicit pass.
+2. Second is <Box element={MovieList movies={movies}} /> like that than in Box component pass element and use that.
+
+*Section[10-115]:-
+1. Learn about setting a default props in react like StarRating({maxRating=5}).
+2. Build a separate StarRating component.
+
+*Section[10-116]:-
+1. Creating the stars and make it dynamic using useState.
+
+*Section[10-117]:-
+1. Handle hover event on the star.
+2. Learn about 2 new event onMouseEnter and onMouseLeave.
+3. Create a new state that is called as tempRating state to store temporary rating onMouseEnter and onMouseLeave.
+
+*Section[10-118]:-
+1. How to make a balance with less props and more than props means when making a components balance out the props and think I like consumer point of view means make that type of component that basically consumer easily consume.
+
+*Section[10-119]:-
+1. Learn new thing on npm how to publish your component that basically provide resuablility.
+2. Create a Star component as public API so anyone can use that according to there flexibility.
+3. Add some customize in StarRating componennt so that user can use in his/her favour.
+
+*Section[10-120]:-
+1. Intialize props types in react so that user use StartRating component with required data types.
