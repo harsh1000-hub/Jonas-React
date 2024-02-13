@@ -430,3 +430,59 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 
 *Section[10-120]:-
 1. Intialize props types in react so that user use StartRating component with required data types.
+
+*Section[10-121]:-
+1. challenge completed TextExpander
+
+✅ completed Section - 10:- ======================================================================================
+
+
+🎯 Section-11:-
+
+*Section[11-122]:-
+1. Section overview.
+
+*Section[11-123]:-
+1. Project 08-how-react-works setup and walkthru.
+
+*Section[11-124]:-
+1. Learn about component,component instance and react element.
+  🔥 React component life cycle:-  component -> component instance -> react element -> DOM element(html)
+     Here :- component -> is a js function there render the UI in the website. Ex:- <Tab/>
+             component instance -> create an instance of component instance. Ex:- Return <Tab/> as many time as you can.
+             react element -> that basically store the information regarding DOM of the UI.
+
+*Section[11-125]:-
+1. Symbol data types in JS cannot be converted into JSON format
+2. Never directly call the react component like this {TabContent({item:content.at(0)})} bcz this will work no error will come.
+3. But react not looking in this TabContent as a component instance.
+4. So that's why always render it inside JSX format like that <TabContent item={content.at(0)}/> // so that component instance will be create and manage the state as well so that react rules will not violet.
+
+*Section[11-126]:-
+1. Learn about react Rendering in more depth -> update the state -> render phase -> commit phase -> display updated UI.
+
+*Section[11-127]:-
+================================== React Render Phase ===========================================
+
+1. Learn about render phase that consists of -> virtual dom -> current fiber tree (reconcilation) -> update fiber tree -> list of dom updates.
+2. according to state update some part of virtual dom update that is sync with that state and first time when component render a so called fiber tree also create and a intial virtual dom create.
+3. And state change virtual dom change with respect to their state and that update virtual dom -> update the fiber tree -> so that actual dom will update only with specific part that was updated with state changes not whole dom will update.
+4. Diffing => compare the element of previous fiber tree with updated fiber tree element so that create a list of DOM Elements/
+5. Render phase may be asynchronous phase means UI update depend on some previous UI update.
+
+*Section[11-128]:-
+========================================= React Commit Phase ===========================================
+
+1. Render phase handle by React library
+2. Commit phase handle by React DOM library means react iteself not knowing what is DOM.
+3. Browser Paint means UI reflect on the screen handle by Browser like chrome,etc.
+4. Learn about commit phase -> update List of DOM Elements -> updated DOM -> UI reflect.
+5. Keep in mind fiber tree create only one time during first of UI render only the screen after that fiber tree reuse and update that's all.
+6. Commit Phase is synchronous means at one go UI will update and keep consistent UI.
+🔥
+7. reconcilation means pick every update react element and compare with fiber tree react element and here fiber is a reconciler and Diffing is a algorithm that is used to compare the update react element with fiber tree react elements so that necessary element will update not all and then create a list of update react elements -> than goes into commit phase where compare with actual dom element and update the dom at one go and keep updated UI and that is Sync with state changes.
+🔥 
+🚨 whole Summary of Section[11-127 & 11-128]:-
+   Trigger(Initial Render) -> React Render phase -> React Commit phase -> UI reflect.
+
+95 min left with this section.
