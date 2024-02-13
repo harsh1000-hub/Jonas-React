@@ -537,3 +537,17 @@ For Ex:- <Button><span>Previous 👈</span></Button>
   }
 3. batching the state not only happen inside eventHandler but also outside the react like JS setTimeOut(handleUndo,2000).
 4. And before React-18 automatic batching not happening means for every state to reset to it original state react re-render everytime.
+
+*Section[11-137]:-
+1. Learn about how event work in react.
+2. Learn about Synthetic event:- For Ex:- onClick = {(e) => setCounter(e.target.value)}.
+3. In react on event handler are store in #root(div) element from there it capture when event occur and bubble from there when event done.
+4. 2 Phase in event handling are:-
+   a. Capturing phase -> when event pass from top to bottom from dom tree when event hit.
+   b. bubbling phase -> when event pass from bottom to its original place like in react #root(div) when event end.
+
+*Section[11-138]:-
+1. Learn about diff b/w library and frameworks and react is library that uses third parties libraries to do other task.
+
+*Section[11-139]:-
+1. Summary of all I learned in this section and for better understanding view pdf.
