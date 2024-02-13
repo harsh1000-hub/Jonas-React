@@ -503,3 +503,37 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 
 *Section[11-133]:-
 1. Use Key-prop in eat-n-split project to fix out bugs.
+
+*Section[11-134]:-
+1. Learn about 2 types of logic in react components:-
+   a. Render Logic :- That execute first page load 
+   b. Event Handler Logic :- execute when some event occur like state changes, http request.
+
+2. Learn about functional programming principles in react :-
+   a. Side effect(Impure function) -> give same input but different output.
+   b. Pure function -> give same input with same output occur.
+
+3. So from that if you have to side effect like http request , etc then use useEffect hook for that to do some outside thing in your project according to project requirements.
+
+*Section[11-135]:-
+1. Learn about In React-18 and if you want that your some state will reset after some work and that that some state in same function so react-18 will batched all state and at one go it reset the state rather than line by line reset the state.
+2. Means React-18 minimize the re-render.
+
+*Section[11-136]:-
+1. batched the state -> is a asynchronous task and React-18 automatincally batched the state.
+2. Do some real practice with bacthed the state:-
+   Code:-
+     function handleTripleInc() {
+    // setLikes(likes + 1);
+    // setLikes(likes + 1);
+    // setLikes(likes + 1);
+    // this above three lines code are async so that's at the end likes === 1 not 3
+
+    // So from above problem we move out as that we apply a callback inside setLikes so that it sync with previous state and come up with likes=3
+    setLikes((likes) => likes + 1);
+    setLikes((likes) => likes + 1);
+    // console.log(likes); // here likes === 0 bcz batching the state is async task so async task will that likes value will be change
+    setLikes((likes) => likes + 1);
+  }
+3. batching the state not only happen inside eventHandler but also outside the react like JS setTimeOut(handleUndo,2000).
+4. And before React-18 automatic batching not happening means for every state to reset to it original state react re-render everytime.

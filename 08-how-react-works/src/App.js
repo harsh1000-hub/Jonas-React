@@ -67,10 +67,33 @@ function TabContent({ item }) {
   const [showDetails, setShowDetails] = useState(true);
   const [likes, setLikes] = useState(0);
 
+  console.log("RENDER");
   function handleInc() {
-    setLikes(likes + 1);
+    setLikes((likes) => likes + 1);
+  }
+  function handleTripleInc() {
+    // setLikes(likes + 1);
+    // setLikes(likes + 1);
+    // setLikes(likes + 1);
+    // this above three lines code are async so that's at the end likes === 1 not 3
+
+    // So from above problem we move out as that we apply a callback inside setLikes so that it sync with previous state and come up with likes=3
+    setLikes((likes) => likes + 1);
+    setLikes((likes) => likes + 1);
+    // console.log(likes); // here likes === 0 bcz batching the state is async task so async task will that likes value will be change
+    setLikes((likes) => likes + 1);
   }
 
+  function handleUndo() {
+    setShowDetails(true);
+    setLikes(0);
+  }
+
+  // this handleUndoLater is the best example of batching the state not only happen inside
+  // eventHandler but also outside the react like JS setTimeOut(handleUndo,2000)
+  function handleUndoLater() {
+    setTimeout(handleUndo, 2000);
+  }
   return (
     <div className="tab-content">
       <h4>{item.summary}</h4>
@@ -84,13 +107,13 @@ function TabContent({ item }) {
         <div className="hearts-counter">
           <span>{likes} ❤️</span>
           <button onClick={handleInc}>+</button>
-          <button>+++</button>
+          <button onClickCapture={handleTripleInc}>+++</button>
         </div>
       </div>
 
       <div className="tab-undo">
-        <button>Undo</button>
-        <button>Undo in 2s</button>
+        <button onClickCapture={handleUndo}>Undo</button>
+        <button onClickCapture={handleUndoLater}>Undo in 2s</button>
       </div>
     </div>
   );
