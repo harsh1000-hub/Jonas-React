@@ -89,6 +89,7 @@ function App() {
         <FormSplitBill
           selectedFriend={selectedFriend}
           onSplitBill={handleSplitBill}
+          key={selectedFriend.id} // Here fix the bugs to reset the state of FormSplitBill when user click on one friend to another friend
         />
       )}
       {/* above line conditionally render the FormSplitBoll when user click on select a particular friends */}

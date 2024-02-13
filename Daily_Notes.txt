@@ -485,4 +485,21 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 🚨 whole Summary of Section[11-127 & 11-128]:-
    Trigger(Initial Render) -> React Render phase -> React Commit phase -> UI reflect.
 
-95 min left with this section.
+*Section[11-129]:-
+1. Learn about how Diffing algorithm works.
+
+*Section[11-130]:-
+1. Learn about Diffing rules means if component with same element at same position than state is preserved/safe and if component with different element at same position that previous component at same position will be destroyed and state will reset.
+2. Take example from Tab 4 -> have something else in there component tree that's why state of likes will reset.
+
+*Section[11-131]:-
+1. Learn about key prop to tell the diffing algorithm that every Tab is unique and Tab has there own state of likes.
+2. Always use a key prop :-
+  a. Keys in lists :- when multiple child component are same that key is know as stable key and increase the preformance of react.
+  b. key prop to reset state:- Like in Tab component multiple but no one uniquely identify so that's why state will not reset so then use key     prop .
+
+*Section[11-132]:-
+1. Resetting state with the Key prop in 08-how-react-works.
+
+*Section[11-133]:-
+1. Use Key-prop in eat-n-split project to fix out bugs.

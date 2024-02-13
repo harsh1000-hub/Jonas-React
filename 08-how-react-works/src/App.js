@@ -39,7 +39,12 @@ function Tabbed({ content }) {
       </div>
 
       {activeTab <= 2 ? (
-        <TabContent item={content.at(activeTab)} />
+        <TabContent
+          item={content.at(activeTab)}
+          key={
+            content.at(activeTab).summary
+          } /*here we apply key prop to reset the state of every specific Tab when user shift move one tab to another Tab*/
+        />
       ) : (
         <DifferentContent />
       )}
