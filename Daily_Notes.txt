@@ -86,7 +86,7 @@ SECTION 5:-
 3. Always one component return one markup you can wrap up other markup inside parent markup
 4. Never nest other component inside another component bcz it is bad practice it work but don't do that.
 
-5. All the assests folder like images, video and etc should be in public folder bcz web pack means react bundle automatincally find that easily
+5. All the assests folder like images, video and etc should be in public folder bcz web pack means react bundle automatically find that easily
 6. Reusing the component by just write the component in root component
 
 *Section[5-37]:-
@@ -110,11 +110,11 @@ SECTION 5:-
 1. How to use props here props means pass data from parent component to child component .
 2. Two steps are there in props to use:
    a. First pass to the component.
-   b. Receice the props to the child component.
+   b. Recieve the props to the child component.
    c. Here props are object so when u use in child component always used in Javascript mode means inside curly braces {props.name} like that.
 
 *Section[5-43]:-
-1. Diff b/w props and state are props are upcoming data from parent component to child component and state are local data of a particular component
+1. Diff b/w props and state:- here props are upcoming data from parent component to child component and state are local data of a particular component
 2. So from above line it means that props are immutable by child component instead you have to mutate the props so update the props thru state.
 3. React follow one-way data flow means only from parent component to child component props pass not vice-versa.
 
@@ -138,17 +138,17 @@ SECTION 5:-
 1. Learn about how to do conditional Rendering with multiple returns statement.
 
 *Section[5-50]:-
-1. Extracting JSx into a component
+1. Extracting JSX into a component
 
 *Section[5-51]:-
-1. destructuring thw props means not write like this props.something rather in child component destructure the props like {pizzaObj} use that and keep in mind that name should be same as what tha props you pass in parent component.
+1. destructuring the props means not write like this props.something rather in child component destructure the props like {pizzaObj} use that and keep in mind that name should be same as what that props names you pass in parent component.
 2. From destructuring props is give us advantage means we clearly see that what props pass from parent component to child component.
 
 *Section[5-52]:-
 1. Learn about react fragment -> use when we need to render more than one element inside jsx bcz as per jsx rule it only have one parent element.
 
 *Section[5-53]:-
-1. conditional set the text content of any element and set the className according to some condition.
+1. conditionally set the text content of any element and set the className according to some condition.
 
 *Section[5-54]:-
 1. revise the topics
@@ -168,7 +168,7 @@ SECTION 5:-
 
 *Section[6-58]:-
 1. How to handle click event in react
-2. Note that don't ever calling a function inside eventHandle bcz react directly execute that function.
+2. Note that don't ever calling a function inside eventHandle bcz react directly execute that function and that leads to infinite render call.
 3. Always when you handle event in react make separate eventHandler function like handlePrevious and handleNext
 
 *Section[6-59]:-
@@ -203,15 +203,15 @@ SECTION 5:-
 2. So rather than update the state with callback function so that other task will also execute like that:-
    setStep((step) => step+1);
     setStep((step) => step+1);
-    // in above case step update twice in single moment. AND this is the best practice to update the state using callback function.
+    // in above case step update twice in single moment. And this is the best practice to update the state using callback function.
 
 *Section[6-66]:-
-1. UI is all about function of state means whatever the state similar the UI.
+1. UI is all about function of state means whatever the state that is similar to the UI.
 2. use state where you find that particular component change over time.
 3. Learn guidelines related to state.
 
 *Section[6-67]:-
-1. Learn that every component if it is same component used in parent component two times there state are individual for both child component.
+1. Learn that every component if it is same component used in parent component more than one times then there state are individual for both child component.
 Ex:- if we use Step card component two times and any changes in first step card component does not do any effect on second step child component.
 2. Every component have there own independent state it does not matter that component are same.
 
@@ -229,7 +229,7 @@ Ex:- if we use Step card component two times and any changes in first step card 
 
 *Section[6-72]:-
 1. Learn new thing that always pass key in component rather than in any jsx and in any html tag.
-
+Ex:- <Task key{task.id}/>
 
 2. When any event occur it pass the event object that is 'e' we used that 'e' to target anything in that event like:-
    onSubmit={handleSubmit}  -> another way write this line onSubmit = {{e} => handleSubmit(e)}
@@ -237,18 +237,17 @@ Ex:- if we use Step card component two times and any changes in first step card 
     e.target.value // like this 
    }
 
-
-3. In html wheneven any form submit means event occur page reload but in react we want to build single page application without reload so how to this by stoping the default behaviour of html 😃:-
+3. In html whenever any form submit means event occur page reload but in react we want to build single page application without reload so how to do this by stoping the default behaviour of html 😃:-
    function handleSubmit(e){
     e.preventDefault() // this will stop the page reload behaviour of html. 
    }
 
-4. Diff b/w onSubmit -> use in form tag in html means if enter in form OR click on button of submit -> both work same for submitting the form content. While onClick -> only work for button tag means no enter tap feature in there in onClick tag.
+4. Diff b/w onSubmit -> use in form tag in html means if enter in form or click on button of submit -> both work same for submitting the form content. While onClick -> only work for button tag means no enter tap feature in there in onClick tag.
 
 *Section[6-73]:-
-1. Learn about how to controlled the element thru react it have three steps:- 1. define the state 2. use the state variable 3. update the state variable thru event function like onChange.
+1. Learn about how to controlled the element thru react it we have three steps:- 1. define the state 2. use the state variable 3. update the state variable thru event function like onChange.
 2. e.target.value = by default a string.
-3. Date only flow down the tree means from parent command to child component here data means props not in siblings.
+3. Data only flow down the tree means from parent component to child component here data means props not in siblings.
 
 *Section[6-74]:-
 1. Diff b/w state and props:- Look in slides.
@@ -271,7 +270,7 @@ Ex:- if we use Step card component two times and any changes in first step card 
 1. Fundamentals of state management when and where to use state.
 
 *Section[7-80]:-
-1. Learn new concept lifting up the state means whenever we need same state in more than one child component so we uplift the state means declare that to the closest parent componen bcz in react data flow from parent to child component not vice - versa.
+1. Learn new concept lifting up the state means whenever we need same state in more than one child component so we uplift the state means declare that to the closest parent component bcz in react data flow from parent to child component not vice - versa.
 2. So whenever we need same state in more than one child component declare that state in parent component should we should follow react principles.
 
 *Section[7-81]:-
@@ -281,7 +280,7 @@ Ex:- if we use Step card component two times and any changes in first step card 
 1. delete item from the list.
 
 *Section[7-83]:-
-1. Learn about derive state means when you figure out that another state easily calculate and you need that stuff so rather than creating a new state try to derive the state bcz it will decrease a number of re-render happen.
+1. Learn about derived state means when you figure out that another state easily calculate and you need that stuff so rather than creating a new state try to derived that state bcz it will decrease a number of re-render happen.
 2. Or you can say that when you calculate the computed value from other state and use that value in your project so never create another state to increase the re-render operation. like i am doing in travel list project for footer section i again create a new state.
 
 
@@ -305,12 +304,12 @@ a. When you give export default someComponentName -> So can import in another co
 b. When you do not give default to someComponentName -> So you can import like import {someComponentName} from './someComponentName.js'.
 
 *Section[7-90]:-
-1. Learn about osm topic that is children props => basically children props arw those props that is between the component jsx like:-
+1. Learn about osm topic that is children props => basically children props are those props that is between the component jsx like:-
 For Ex:- <Button><span>Previous 👈</span></Button> 
 // in this line children props are <span>Previous 👈</span> you can pass to child component with predefined name that is 'children' you can use this children inside you jsx .
 
 2. And from children props you don't have passed unnessary props to child component.
-3. For ussing the children props between your component use have to use this type of syntax <Button>....children props</Button>
+3. For using the children props between your component use have to use this type of syntax <Button>....children props</Button>
 
 *Section[7-91]:-
 1. Again use the concept of children props to create StepMessage component in steps project.
@@ -332,16 +331,16 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 
 *Section[7-97]:-
 1. Style the eat-n-split project build components.
-2. Learn onew new attribute that is 'disabled' attribute in input box that basically disable the input box typing means we don't intract with that input tag.
+2. Learn one new attribute that is 'disabled' attribute in input box that basically disable the input box typing means we don't interact with that input tag.
 
 *Section[7-98]:-
 1. Code some more components in eat-n-split project.
 
 *Section[7-99]:-
-1. Wire up the state and code useing useState.
+1. Wire-up the state and code using useState.
 
 *Section[7-100]:-
-1. Wire the up the state and make some new state for show the friend that selected in friendlist component and show in splitbill component.
+1. Wire-up the state and make some new state for show the friend that selected in friendlist component and show in splitbill component.
 
 *Section[7-101]:-
 1. Creating controlled element.
@@ -402,7 +401,7 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 
 *Section[10-113]:-
 1. There is ListBox component in usepopcorn project we rename that component into Box component and make a resuable component.
-2. And delete that WatchedBox component bcz similar stuff also inside a Box component.
+2. And delete that WatchedBox component bcz similar stuff also inside a WatchedBox component.
 
 *Section[10-114]:-
 1. Here we pass {children} in two ways first {children} which is called implicit pass.
@@ -421,7 +420,7 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 3. Create a new state that is called as tempRating state to store temporary rating onMouseEnter and onMouseLeave.
 
 *Section[10-118]:-
-1. How to make a balance with less props and more than props means when making a components balance out the props and think I like consumer point of view means make that type of component that basically consumer easily consume.
+1. How to make a balance with less props and more than props means when making a components balance out the props and think like a consumer point of view means make that type of component that basically consumer easily consume.
 
 *Section[10-119]:-
 1. Learn new thing on npm how to publish your component that basically provide resuablility.
