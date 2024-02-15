@@ -32,7 +32,7 @@ function App() {
   // create a common state that is used in FriendsList and FormAddFriend component
   const [friends, setFriends] = useState(initialFriends);
 
-  // create a common state that is used in FriendList and Split Bill
+  // create a common state that is used in FriendsList and Split Bill
   const [selectedFriend, setSelectedFriend] = useState(null);
 
   // update the state for setShowAddFriend
