@@ -550,3 +550,43 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 
 *Section[11-139]:-
 1. Summary of all I learned in this section and for better understanding view pdf.
+
+
+✅ completed section - 11
+
+==========================================================================================================================================
+
+🔥 Section - 12:-
+
+*Section[12-140]:-
+1. Section overview.
+
+*Section[12-141]:-
+1. Learn about component mount means when first time component render on a screen -> update the component on the basis of state change , parent re-renders and props changes.
+2. Learn about component unmount means when component destroyed means component instance will destroyed.
+
+*Section[12-142]:-
+1. Learn about how not to fetch the data inside render part of react bcz it create multiple render that results out multiple fetching and that is not a good practice.
+2. That's why fetching the data is side effect task so do outside the react component so infinite render problem doesn't exist.
+3. And if do side effect like data fetching inside component and when component re-render unlimited request in network tab goes.
+4. So from above text it is cleared that not ever update the state inside the side effect like data fetching bcz it cause infinite re-render and infinite network call with respect to the data fetching api. 
+5. And always update the state either inside any handler function and or inside event handler like onClick={(e)=>setCounter(e.target.value)};
+
+
+*section[12-143]:-
+1. As we know that doing side effect like data fetching inside component cause many problem to come with all these problem we use a useEffect() hook.
+2. Learn about useEffect hook that basically use for to execute side effect inside component without cause any problem.
+3. useEffect(function(){
+   ...... some side effect like data fetching
+},[])    // [] this means dependency array means useEffect work when first time component mount/render means first component render that data fetching execute.
+
+*Section[12-144]:-
+1. Learn diff b/w event Handler side effect and useEffect side effect.
+2. Means event Handler side effect when some event occur.
+3. useEffect side effect execute automatically with some condition like when component mount and or when component unmount.
+4. And please not over use the useEffect every where rather than use where it is needed.
+5. Maximum time use event handler to do side effect on some event occur.
+
+*Section[12-145]:-
+1. Implement above fetch code with async and await.
+2. Learn about useEffect iteself function as an parameters so that create another async function inside that function parameter.

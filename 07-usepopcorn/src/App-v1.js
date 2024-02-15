@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import "./index.css";
 
 const tempMovieData = [
   {
@@ -50,32 +51,10 @@ const tempWatchedData = [
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
-const KEY = "5b72a1d2";
 export default function App() {
   // lift up the state there
-  const [movies, setMovies] = useState([]);
-  const [watched, setWatched] = useState([]);
-
-  //  fetch the data from oMdb api key
-  // fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=interstellar`)
-  //   .then((res) => res.json())
-  //   .then((data) => setMovies(data.Search));
-
-  // here use useEffect to fetch the data insidet App component
-  // first time App component mount/render useEffect load the data from api on the screen with infinte render and network call
-
-  // using async and await
-  useEffect(function () {
-    async function fetchMovies() {
-      const res = await fetch(
-        `http://www.omdbapi.com/?apikey=${KEY}&s=interstellar`
-      );
-      const data = await res.json();
-      setMovies(data.Search);
-    }
-    fetchMovies(); // call that function bcz in useEffect have function inside that another async function.
-  }, []);
-
+  const [movies, setMovies] = useState(tempMovieData);
+  const [watched, setWatched] = useState(tempWatchedData);
   return (
     <>
       {/* here we do component composition */}
@@ -181,7 +160,7 @@ function Movie({ movie }) {
       <h3>{movie.Title}</h3>
       <div>
         <p>
-          <span>📅</span>
+          <span>🗓</span>
           <span>{movie.Year}</span>
         </p>
       </div>
