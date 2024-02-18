@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 const tempMovieData = [
   {
@@ -55,7 +55,9 @@ export default function App() {
   // lift up the state there
   const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState([]);
-
+  const [isloading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const query = "interstellar";
   //  fetch the data from oMdb api key
   // fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=interstellar`)
   //   .then((res) => res.json())
@@ -67,13 +69,29 @@ export default function App() {
   // using async and await
   useEffect(function () {
     async function fetchMovies() {
-      const res = await fetch(
-        `http://www.omdbapi.com/?apikey=${KEY}&s=interstellar`
-      );
-      const data = await res.json();
-      setMovies(data.Search);
+      try {
+        setIsLoading(true);
+        const res = await fetch(
+          `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`
+        );
+
+        // this if handle the error when network offline during fetch the movie from api
+        if (!res.ok) {
+          throw new Error("Something went wrong with fetching Movies");
+        }
+
+        const data = await res.json();
+        // this if handle the error when you search that movie that are not present in this OMdb api
+        if (data.Response === "False") throw new Error("Movie not Found");
+        setMovies(data.Search);
+      } catch (err) {
+        setError(err.message); // here update the state of error
+      } finally {
+        // this finally code always execute in any condition
+        setIsLoading(false);
+      }
     }
-    fetchMovies(); // call that function bcz in useEffect have function inside that another async function.
+    fetchMovies(); // call that function bcz in useEffect already have a function inside that another async function is their.
   }, []);
 
   return (
@@ -88,7 +106,11 @@ export default function App() {
 
         {/* here below is the implicit way*/}
         <Box>
-          <MovieList movies={movies} />
+          {isloading && <Loader />} {/* if loading that loader component */}
+          {!isloading && !error && <MovieList movies={movies} />}
+          {/* everything goes fine show movie*/}
+          {error && <ErrorMessage message={error} />}
+          {/* this show error in a particular case */}
         </Box>
         <Box>
           <WatchedSummary watched={watched} />
@@ -99,6 +121,19 @@ export default function App() {
   );
 }
 
+// Loader Component
+function Loader() {
+  return <p className="loader">Loading...</p>;
+}
+
+// ErrorMessage Component
+function ErrorMessage({ message }) {
+  return (
+    <p className="error">
+      <span>⛔</span> {message}
+    </p>
+  );
+}
 // Navbar component
 function Navbar({ children }) {
   // here we use component composition

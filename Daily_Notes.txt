@@ -584,9 +584,15 @@ For Ex:- <Button><span>Previous 👈</span></Button>
 1. Learn diff b/w event Handler side effect and useEffect side effect.
 2. Means event Handler side effect when some event occur.
 3. useEffect side effect execute automatically with some condition like when component mount and or when component unmount.
-4. And please not over use the useEffect every where rather than use where it is needed.
+4. And please not over-use the useEffect every where rather than use where it is needed.
 5. Maximum time use event handler to do side effect on some event occur.
 
 *Section[12-145]:-
 1. Implement above fetch code with async and await.
 2. Learn about useEffect iteself function as an parameters so that create another async function inside that function parameter.
+
+*Section[12-146]:-
+1. Add loading state to usepopcorn when api hit.
+
+*Section[12-147]:-
+1. 
